@@ -11,11 +11,11 @@
 	    <property name="hibernate.connection.password">System</property>
 	
 	    <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-	    <property name="hibernate.hbm2ddl.auto">update</property>
+	    <property name="hibernate.hbm2ddl.auto">create</property>
 	    <property name="show_sql">true</property>
 	
-	    <mapping class="OneToManyRelation.Man"/>
-	    <mapping class="OneToManyRelation.Bike"/>
+	    <mapping class="ManyToManyRelation.Trainer"/>
+	    <mapping class="ManyToManyRelation.Tech"/>
 	    
 		
 	</session-factory>
