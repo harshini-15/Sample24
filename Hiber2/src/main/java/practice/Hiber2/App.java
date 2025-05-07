@@ -1,9 +1,14 @@
 package practice.Hiber2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+import OneToManyRelation.Bike;
+import OneToManyRelation.Man;
 
 public class App 
 {
@@ -16,11 +21,19 @@ public class App
         Session sess = sf.openSession(); 
         sess.beginTransaction();
         
-        Employee emp = new Employee("Harsh", 35000, "IT consultant", "ECE");
-        
-       sess.persist(emp);
-       sess.getTransaction().commit();
+       Person p = new Person();
+      AadharCard ac = new AadharCard(111, "harsh", "ppy", "female",p);
        
-       sess.close();
+      p.setId(101);
+      p.setNickname("harshuu");
+      p.setCard(ac);
+      
+      sess.persist(p);
+      sess.persist(ac);
+        
+      
+      sess.getTransaction().commit();  
+       
+     
     }
 }
